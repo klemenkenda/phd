@@ -4,4 +4,31 @@
 \pdfbookmark[0]{Abstract}{Abstract}
 %--------------------------------------------------------------------------------------------------
 
-TODO
+The rapid evolution of sensor technologies, particularly within the Internet of Things (IoT) domain, has led to an era dominated by massive real-time data flows. 
+This transition resulted in the need for novel data processing methodologies that facilitate the shift from traditional offline batch analytics to agile real-time predictions and analysis.
+
+The dissertation supports the deployment of analytical solutions from the laboratory environment to the real-world setting.
+In particular, we address the problems of autonomous data cleaning, data enrichment and fusion, feature selection, and overall design of such a solution.
+At the core of this study lies an incremental data fusion technique for generating feature vectors suitable for machine learning models that are built from a set of heterogeneous data streams.
+The significance of such a methodology has been largely ignored in most studies in this field, which tend to concentrate solely on the effectiveness of machine learning models.
+These studies assume that the data used are consistent, aligned, and readily accessible, which is rarely the case in real-world scenarios.
+
+The aim of this work is to provide an architecture and functional framework that address the limitations discussed above.
+First, we present a data cleaning methodology that takes advantage of the ability of the Kalman filter to make short-term predictions, including predicting variance.
+The method can be used to clean data streams with a sampling rate that is much higher than the rate at which the measured phenomena change. 
+This is a common situation in the Internet of Things (IoT).
+Second, we present the methodology for fusing multiple heterogeneous streaming data sources into feature vectors.
+The proposed methodology has the ability to address the challenges posed by the features of heterogeneous data streams, such as time delay and varying data sampling rates.
+In addition, it enables the incorporation of both predicted and precalculated values into the feature vector.
+The system generates feature vectors consisting of data values that are aligned with the appropriate timestamps, values that have been aggregated or enriched, delayed values, static values that are relevant, and predictions, such as weather forecasts for the corresponding timestamp.
+This type of system has the capability to generate comprehensive feature vectors, which allows for effective modeling of the system.
+A large quantity of possibly correlated features does not necessarily lead to the most optimal modeling outcomes. 
+Hence, we present FASTENER, a feature selection algorithm that employs genetic algorithms and multi-objective optimization.
+The algorithm was specifically designed for the task of segmenting Earth observation images. 
+However, it has demonstrated unexpected effectiveness in various other situations, such as time-series forecasting.
+Subsequently, we place the created solutions within the Big Data lambda architecture, thereby expanding the capabilities of the speed pillar in the architecture, which we propose to extend beyond the event detection scenarios. 
+We apply this architecture to facilitate the water management domain.
+In the water management domain we also test the usability of incremental learning algorithms and compare them to traditional batch methods.
+
+The effectiveness of the suggested approach has finally been evaluated in several scenarios, encompassing domains such as energy management, transport, and environment. 
+Most recently, the framework has been integrated into the final platform of the H2020 NAIADES project, successfully demonstrating its applicability in water management.

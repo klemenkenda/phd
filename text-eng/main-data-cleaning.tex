@@ -1,23 +1,41 @@
 %--------------------------------------------------------------------------------------------------
-% 
 \chapter{Autonomous Data Cleaning on a Stream}
 \label{ch:data-cleaning}
 %--------------------------------------------------------------------------------------------------
 
-\highlight{COMMENT}
-V tem primeru mora biti iz uvoda jasno razviden opis znanstvene metode ter prispevka kandidata k posamezni objavi, pri kateri je več avtorjev. V diskusiji kandidat smiselno povzame vse rezultate svoje disertacije.
-\highlight{ENDCOMMENT}
+%\epigraph{Everybody wants to save the Earth; no one wants to help mom do the dishes.}{\textit{P. J. O'Rourke}}
+%\epigraph{You don't get anything clean without getting something else dirty.}{\textit{Cecil Baxter}}
+\epigraph{Grabage in, garbage out.}{\textit{Gerorge Fuechsel}}
 
-TODO
-
-\begin{list}{}
-{\leftmargin=2.5em \itemindent=-2.5em}
-    \item K. Kenda and D. Mladenić, “Autonomous sensor data cleaning in stream mining setting,” \textit{Business Systems Research Journal}, vol. 9, no. 2, pp. 69–79, 2018.
-\end{list}
-
-
+% introducing the paper
 \begin{quote}
-    \textit{Klemen Kenda contributed to the conceptualization, methodology, software development, evaluation and visualization. He also lead writing of the paper.}
+In this chapter, we introduce the paper entitled \textit{Autonomous Sensor Data Cleaning in a Stream Mining Setting}, authored by Klemen Kenda and Dunja Mladenić. 
+This paper has been published in the Business Systems Research Journal~\cite{kenda:2018:autonomous}.
+Klemen Kenda contributed to the conceptualization, methodology, software development, evaluation and visualization.
+Furthermore, he took the lead in composing the paper.
 \end{quote}
+
+% description of the scientific method
+Data streams originating from the IoT are inherently prone to various inconsistencies and flaws.
+Autonomous data cleaning engine is a prerequisite for an efficient real-world implementation of a machine learning pipeline and represents the first building block after the data ingestion of such a pipeline (see Figure \ref{fig:the_big_picture}).
+
+Our approach to online data cleaning is based on the utilization of the Kalman filter. 
+In the context of machine learning, the Kalman filter can be regarded as an incremental short-term predictive model.
+The fundamental premise underlying the Kalman filter is the concealment of the true state of the system from the observer.
+Consequently, the filter's primary objective is to deduce the hidden actual state of the system based on the observed states.
+Both the hidden state and its dynamics are stipulated by the user and serve as foundational components of the filter.
+With new incoming data, the Kalman filter incrementally adjusts its parameters, aligning with the user-defined criteria. 
+The filter operates across two distinct phases.
+
+In the first phase, also known as the \textit{projection} phase, the filter forecasts the forthcoming hidden state of the system along with the corresponding covariance matrices. 
+This prediction facilitates the data cleaning system in establishing an interval encompassing the next expected data point.
+Should the subsequent measurement fall outside this interval, it is flagged as an outlier, and the forecasted value takes its place.
+
+% evaluation
+The methodology has been tested on 9 artificial labelled datasets as well as 5 unlabelled datasets (two synthetic datasets and three real data sets of groundwater levels, server load and from smart-grids).
+For the unlabelled datasets, the effectiveness of the data cleaning process was estimated through an indirect evaluation approach. 
+This evaluation relied on the enhancement observed in modeling outcomes resulting from the data cleaning procedure.
+
+% discussion in the end of PhD should follow up on the results of the dissertation, including this contribution
 
 \includepdf[pages=-]{papers/data_cleaning.pdf}

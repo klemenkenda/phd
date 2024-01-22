@@ -1,30 +1,143 @@
 %--------------------------------------------------------------------------------------------------
 % 
-\chapter{Conclusions}
+\chapter{Conclusions and Further Work}
 \label{ch:conclusion}
 %--------------------------------------------------------------------------------------------------
 
-TODO
+\epigraph{The only thing that makes life possible is permanent, intolerable uncertainty; not knowing what comes next.}{\textit{Ursula K. Le Guin}}
 
-- Zaključek
-Še enkrat se prispevke zananosti napiše in razdela; kako smo te stvari dokazali (lahko številke iz rezultatov).
+This thesis investigates the entire vertical needed for handling multiple heterogeneous time series analysis and the implementation of predictive models for IoT in real-world scenarios.
+The contributions are significant in terms of the architectures and frameworks involved, as well as the development of data cleaning and pre-processing capabilities, and ultimately, modeling. 
+The focal point of the thesis is the framework for autonomous online fusion of heterogeneous sensor streams data, which serves as the foundation for many other features of the proposed platform, including efficient modeling with contextual data and real-time prediction generation.
 
-This thesis examines ...
+We have proposed several new algorithms and innovations.
+A new algorithm using Kalman filtering has been suggested for autonomous online time series data cleaning. 
+A new approach for online data fusion of heterogeneous data streams in predictive modeling has been introduced. 
+A feature selection algorithm called FASTENER has been proposed, which utilizes genetic algorithms and multiobjective optimization methods to achieve faster convergence and improved feature sets compared to previous methods.
+To the best of our knowledge, the usability of incremental learning methods in water management scenarios has been analyzed for the first time. 
+Lastly, an extension to the Big Data lambda architecture has been proposed, enhancing the predictive capabilities of the analytical frameworks in the speed (online) pillar.
 
-We have proposed ...
+The solutions described in this thesis have been applied in several research projects funded by the FP7 and H2020 programs, and have also been implemented in industry. 
+The entire range of applications has been utilized and deployed in the H2020 NAIADES project, where it was enhanced with various specific water management solutions. 
+The thesis encompasses numerous evaluations conducted in the fields of environment, transportation, energy, and Earth observation.
 
-Scienteific contributions
+In the rest of this chapter, we begin by providing a summary of the scientific contributions made in this thesis. 
+We then proceed to discuss the goals and hypotheses that were presented in Chapter \ref{ch:introduction}, taking into account our contributions and results. 
+Finally, we conclude by outlining some potential directions for future research.
 
-Razdelan 1 po 1
+\section{Contributions to Science}
+\label{sec:contributions_to_science}
 
-Implementations:
+%Še enkrat se prispevke zananosti napiše in razdela; kako smo te stvari dokazali (lahko številke iz rezultatov).
 
+\noindent The scientific contributions of the thesis lie in the domains of data pre-processing, big data architectures. 
+We also offer an assessment of the developed methodologies in various real-world scenarios.
+Below, we will further divide each contribution and provide a brief discussion and evaluation for each.\\
+
+\noindent \noindent \textbf{SC1 - Data cleaning and fusion, feature generation (enrichment) and selection}: 
+%Development of autonomous methodologies for online data cleaning (based on Kalman filter), fusion and enrichment of heterogeneous data streams. Development of a novel algorithm for feature selection based on information theory and multi objective optimization approach.
 \begin{itemize}
-    \item FP7 Sunseed
-    \item H2020 In2Dreams
-    \item Iskratel / Russia
-    \item H2020 Water4Cities and NAIADES
+    \item \textbf{SC1.1 - Incremental data cleaning}: 
+        We have developed an incremental data cleaning methodology based on Kalman filter.
+        Our approach demonstrates that this methodology can be initialized without prior knowledge regarding the data stream to be cleaned, making it well-suited for application in IoT data streams, where periodicity of the observed phenomena is typically considerably shorter than the sampling interval.
+        To evaluate our methodology, we conducted tests on a variety of datasets, including one synthetic labeled dataset and six unlabeled datasets, consisting of two synthetic datasets and four real-world datasets.
+        Within the unlabelled datasets, we have implemented an outlier detection assessment based on the outcomes of autoregressive modeling. The results clearly indicate that the cleansed datasets lead to improved modeling results.
+    \item \textbf{SC1.2 - Incremental data enrichment and data fusion:} 
+        We have introduced a formal definition of heterogeneous data streams fusion. 
+        In this formal definition, we establish the essential components, encompassing data streams and the requisite operators, which collectively yield the generation of enriched feature vectors that enable more accurate predictive modeling.
+        We developed a generic streaming data fusion framework for heterogeneous data streams. 
+        To the best of our knowledge, we provided the first generic framework capable of generating feature vectors from heterogeneous data streams, thereby enabling the application of machine learning techniques in real-time streaming scenarios.
+        We demonstrated the usability of the platform beyond the controlled laboratory environment, integrating it in several real-world pilot scenarios.        
+    \item \textbf{SC1.3 - Feature selection:}
+        We proposed a novel genetic wrapper algorithm for feature selection that we coined FASTENER (feature selection enabled by entropy).
+        The algorithm reduces the number of features in a machine learning problem while preserving or even improving modeling accuracy.
+        Using pre-trained models for information gain calculation, the algorithm converges faster towards the optimal feature set for a particular modeling task than similar algorithms.
+        The algorithm improved state-of-the-art accuracy in the remote sensing application for land-cover classification and has also shown competitive performance on several feature selection benchmark datasets (with very small samples and very big number of features).        
 \end{itemize}
 
+\noindent \textbf{SC2 - Architecture}: 
+%Development of an extension of lambda (big data) architecture for hybrid ML model development (batch) and deployment (in real-time).
+\begin{itemize}
+    \item \textbf{SC2.1 - Extended lambda architecture:}
+        The proposed analytical platform is based on the lambda and hut architectures.
+        We suggested refinements of the big data architectures in order to support the needs in the water domain.
+        In the lambda architecture, we suggested to include modeling capabilities in the speed pillar to overcome the traditional capabilities, limited to (complex) event processing.
+    \item \textbf{SC2.2 - Conceptual architecture for water management analytical platform based on extended lambda architecture:}
+        A solution for heterogeneous sources data fusion in a stream was integrated in the architecture.
+        The setting enables contextual information to be included in the data-driven models.
+        This contribution enables integration of machine learning applications to the real world scenarios and overcomes the laboratory setting for testing of forecasting or anomaly detection models on a stream of data.
+        
+\end{itemize}
 
-Future work
+\noindent \textbf{SC3 - Evaluation in real-world scenarios}: 
+%Evaluation of the proposed architecture and methods in several real-world scenarios from the energy management, water management, smart cities, transport energy management and earth observation domains.
+\begin{itemize}
+    \item \textbf{SC3.1 - Evaluation of the proposed architecture and methods in several real-world scenarios: }
+        We successfully integrated a solution for heterogeneous sources data fusion in a stream in the architecture.
+        Such a setting not only facilitates the inclusion of contextual information in data-driven models but also culminates in a notable enhancement of the overall model accuracy.
+
+        The initial ideas for this work have been developed already in 2014 within FP7 NRG4CAST project and then later implemented also in FP7 Sunseed project, where data fusion has been utilized in the energy management sector, handling forecasting of energy demand/production in thermal plants, smart buildings, smart cities and smart grids.
+        The implementation of smart grid solutions was successfully executed within the project in collaboration with Iskratel d.d. Furthermore, these solutions were effectively deployed in their commercial applications.
+        Further development followed during the H2020 In2Dreams project, where the infrastructure has been used in the mobility use case, mainly estimating energy consumption of electric trains for short- and mid-term prediction horizons.
+        The usability of data fusion has been studied for land-cover applications based on satellite imagery in H2020 PerceptiveSentinel project, where FASTENER feature selection has been developed.
+        Finally, the lambda framework has been formalized in H2020 Water4Cities and H2020 NAIADES projects. 
+        The former provided a rich implementation of the framework (including data fusion, anomaly detection, predictions and complex domain applications) in the water management sector.
+        
+        The papers presented in this thesis also include evaluation of presented methodologies with the focus on the benefits of heterogeneous on-line sensor data fusion in several scenarios: environmental scenarios \cite{kenda:2018:autonomous, kenda:2020:water-modeling, kenda:2022:water-framework}, energy management~\cite{kenda:2019:fusion}, transport~\cite{kenda:2019:fusion}, and Earth observation~\cite{koprivec:2020:fastener}.
+    \item \textbf{SC3.2 - Evaluation of incremental learning methods in the water domain: }
+        Stream mining techniques improve the computational performance of the pipeline and provide models that are better able to adjust to changes (concept drift) in real-time data than traditional batch models.
+        The architecture natively supports incremental methods, covered in SC1, and therefore fits well with incremental learning techniques.
+        We introduced incremental learning techniques to modeling of surface and groundwater levels.
+        In that scenario, we prepared a comparison of 21 different statistical modeling techniques at different time horizons.    
+\end{itemize}
+
+\section{Further Work}
+
+The thesis proposes solutions for applications of anayitics in IoT, addressing a broad variety of challenges through the entire data processing vertical, specifically in data cleaning, data fusion, feature selection, predictive modeling, and the corresponding architectural design. 
+In the further work section, we limit ourselves to the areas where this thesis provides the most significant contributions.
+Further work is outlined in three categories: applications, architecture and data fusion. 
+In the latter part, we also acknowledge and discuss the significant influence of deep learning models on the accomplishments presented in this thesis. \\
+
+% other domains
+\noindent \textbf{Applications.} 
+One potential avenue for further research would involve assessing the performance of the proposed system in various other contexts, such as smart cities, smart buildings, smart agriculture, health care, finance, manufacturing, and other relevant domains.
+The unique characteristics of different domains may provide valuable insights to enhance the functionality of the presented components to better meet the specific requirements of use cases. \\
+
+% architecture
+\noindent \textbf{Architecture.} 
+From an architectural perspective, there are a couple of potential directions to consider. 
+An intriguing enhancement to the current system could be the implementation of a feature store, which would extend the current data management layer. 
+As feature vectors are generated in an incremental manner, the feature store would greatly enhance the system's usability and also offer improved traceability and troubleshooting capabilities for data engineers.
+
+The need to automate and operationalize machine learning models has led to a new field within computer engineering and data science called machine learning operations (MLOps)~\cite{kreuzberger:2023:mlops}.
+Several new architectures have been proposed in the field in recent years that present end-to-end ML frameworks, which address and solve similar problems as enhanced lambda architecture.
+The solutions rely on horizontally scalable elements capable of managing large volumes of data from the Internet of Things (IoT) and other sources.
+Future research should take into account the potential impact of recent achievements in MLOps to the rationality and efficacy of the proposed lambda architecture.
+\\
+
+% data fusion
+\noindent \textbf{Data fusion.}
+The limitations of the custom data fusion components have been observed through practical experience. 
+These include issues such as the delayed calculation of features that rely on a significant amount of historical data for computation, as well as the complex process of restarting the system after a crash or the injection of invalid data.
+The latter situation often occurs during the development of a new model and, therefore, represents a bottleneck in the whole modeling cycle.
+Over the past few years, there has been a significant increase in the popularity of time series databases (TSDB), leading to the development and availability of several mature implementations.
+Utilizing the capabilities of TSDB's, a data fusion approach would conceptually represent a regression from the presented incremental data fusion algorithms. 
+Nevertheless, the anticipated outcome would offer improved stability and faster prototyping of machine learning solutions.
+
+Evaluation of data fusion systems is difficult and is usually achieved through its effect on modeling capabilities.
+We propose a future investigation of the evaluation of the level of expressiveness of the language used to define feature vectors.
+
+The connection between the data fusion component and its applicability in time series deep learning models has not been explored in our research.
+By utilizing Long Short-Term Memory (LSTM), the models have acquired the capability to retain information in memory over extended periods of time.
+Models like these have shown great success in processing sequential data, such as in analyzing time series.
+The ability to recall information may make certain aspects of the data fusion component obsolete, such as including delayed measurements in the feature vector.
+A similar effect could be achieved with self-attention mechanisms in transformers and other relevant deep learning approaches (N-BEATS~\cite{oreshkin:2019:nbeats}, N-HiTS~\cite{challu:2023:nhits}, PatchTST~\cite{nie:2022:time}).
+Additional studies are needed to determine the extent to which data fusion contributes to the performance of deep neural network models.
+
+Driven by the success of ChatGPT and other large language models, several proposals have emerged recently for foundational models for time series.
+One such example is TimeGPT-1 \cite{garza:2023:timegpt}, which is very successful with zero-shot inference of volatile time series.
+In the coming years, significant advancements are expected with these types of models, which could potentially provide a feasible alternative to current time-series modeling approaches.
+Because multivariate time series are not considered in these models, our approach may consistently outperform foundational time-series models for several use cases from presented domains.
+We recommend that future research examines the usability of foundational models for time series in use cases that involve relevant contextual data.
+
+
