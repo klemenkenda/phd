@@ -7,7 +7,7 @@
 
 % anouncing the paper
 \begin{quote}
-This chapter presents the paper titled \textit{Streaming data fusion for the internet of things} by Klemen Kenda, Blaž Kažič, Erik Novak and Dunja Mladenić and presents the centerpiece of this thesis. The paper was published in the Sensors journal \cite{kenda:2019:fusion}.
+This chapter presents the paper titled \textit{Streaming data fusion for the internet of things} by Klemen Kenda, Blaž Kažič, Erik Novak and Dunja Mladenić and presents the centerpiece of this thesis. The paper was published in the Sensors journal (IF 2019: 3.275)~\cite{kenda:2019:fusion}.
 Klemen Kenda is the main author of the paper. 
 He contributed to conceptualization, methodology, software development, validation, formal analysis, data curation, writing, visualization, project administration and funding acquisition.
 \end{quote}
@@ -31,27 +31,34 @@ There are several types of data fusion techniques used in IoT, that vary from lo
 \end{enumerate}
 
 % introduction to paper
-Our methodology focuses on feature-level fusion and is ignorant of any high-level semantic information regarding the observed system, such as sensor metadata or even system's knowledge graph \cite{kenda:2019:fusion}. 
-The goal of the research was to create a useful component in the lambda architecture that would enable fast deployment of real-world IoT applications of machine learning, such as predictive modeling or anomaly detection.
+Our methodology focuses on feature-level fusion and is ignorant of any high-level semantic information regarding the observed system, such as sensor metadata or even the system's knowledge graph \cite{kenda:2019:fusion}. 
+The purpose of the research was to create a useful component in the lambda architecture that would enable fast deployment of real-world IoT applications of machine learning, such as predictive modeling or anomaly detection.
 
 % methodology
-The paper provides a formal definition of heterogeneous data streams fusion, a working streaming data fusion framework and conceptual architecture of the system.
+The paper provides a formal definition of heterogeneous data streams fusion, a working streaming data fusion framework, and conceptual architecture of the system.
 In the lambda architecture, the data fusion component is located immediately after data cleaning (see Figure \ref{fig:the_big_picture}).
 
-The methodology is able to ingest 3 types of data: streaming sensor data, updating predictions (such as weather forecasts) and static data (such as data describing human behaviour, for example working days).
+The methodology is able to ingest three types of data: streaming sensor data, updating predictions (such as weather forecasts) and static data (such as data describing human behavior, for example working days).
 Three algorithms are presented that enable the framework to generate enriched data streams and fuse them locally and globally.
 
 % evaluation
-The system has been deployed both in a cloud environment and on an edge device. 
-Validation of the methodology's efficiency has been accomplished through cloud deployment, using public train data from edge devices on the smart-grid dataset. Additionally, performance evaluation was conducted on the traffic dataset.
+The system has been deployed in both a cloud environment and an edge device. 
+Validation of the methodology's efficiency has been accomplished through cloud deployment, using public train data from edge devices on the smart-grid dataset. In addition, a performance evaluation was conducted on the traffic data set.
 
-The findings strongly support the advantages of employing data fusion techniques. Enhanced data streams have demonstrated a higher model accuracy when compared to non-enriched streams. Moreover, the utilization of multiple data streams that provide contextual information has yielded superior model outcomes in comparison to relying solely on single-source data streams.
+The findings strongly support the advantages of employing data fusion techniques. Enhanced data streams have demonstrated a higher model accuracy when compared to nonenriched streams. Moreover, the use of multiple data streams that provide contextual information has yielded superior model outcomes compared to relying solely on single-source data streams.
+
+In the train scenario, when predicting electricity consumption for a prediction horizon of $10$ seconds on the edge device, the model accuracy increased from $R^2=0.62$ (when only using additional auto-regressive features) to $R^2=0.8$ using random forest regression with the top 20 correlated features.
+In the smart grid scenario, the most successful predictive algorithm was also a random forest.
+The prediction horizon was set to $10$ hours.
+Performance improved from $R^2 = 0.90$ for models using only auto-regressive features to $R^2 = 0.93$ with the top 20 features.
+In the traffic data set, we predicted the energy demand for an electric train power station 10 hours in advance.
+The random forest performance improved from $R^2 = 0.68$ to $R^2 = 0.80$.
 
 The implemented system has been successfully deployed across two distinct environments: a cloud-based infrastructure and an edge computing device.
 In a cloud-based deployment, the methodology's efficiency has been validated on the smart-grid dataset. 
-On the edge devices, deployed in electric public trains, the methodology's effectiveness has been validated on the traffic dataset.
+On the edge devices, deployed in electric public trains, the effectiveness of the methodology has been validated on the traffic data set.
 
-The results confirm the benefits of using data fusion methods: enriched data streams yield better model accuracy than non-enriched and streams from multiple data streams that describe more context yield better model results than single source data streams.
-Additional validation of the overall system water management scenarios is given also in Chapter \ref{ch:big_data_framework}.
+The results confirm the benefits of using data fusion methods: enriched data streams yield better model accuracy than nonenriched, and streams from multiple data streams that describe more context yield better model results than single source data streams.
+Additional validation of the overall system water management scenarios is also given in Chapter \ref{ch:big_data_framework}.
 
 \includepdf[pages=-]{papers/streaming_data_fusion_for_iot.pdf}

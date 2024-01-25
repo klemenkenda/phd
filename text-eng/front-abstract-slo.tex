@@ -9,24 +9,24 @@ S tem so nastale potrebe po novih metodah obdelave podatkov, ki omogočajo preho
 
 Doktorska disertacija podpira prenos analitičnih rešitev iz nadzorovanega laboratorijskega v realno okolje. 
 Posebej se ukvarjamo z problemi avtonomnega čiščenja podatkov, obogatitve podatkov in njihove združitve v realnem času, izbire značilk ter izdelave ustreznih arhitekturnih rešitev.
-Jedro te študije predstavlja tehnika inkrementalnega združevanja podatkov za generiranje vektorjev značilk, zgrajenih heterogenih podatkovnih tokov in primernih za uporabo v modelih strojnega učenja.
-Pomembnost takšne metodologije je bila v večini študij na tem področju pretežno spregledana, saj se slednej večinoma osredotočajo zgolj na učinkovitost modelov strojnega učenja.
-Te študije predpostavljajo, da so uporabljeni podatki dosledni, usklajeni in takoj dostopni, kar v realnih scenarijih redko drži.
+Jedro te študije predstavlja tehnika inkrementalnega združevanja podatkov za generiranje vektorjev značilk, sestavljenih na podlagi heterogenih podatkovnih tokov in primernih za uporabo v modelih strojnega učenja.
+Pomembnost takšne metodologije je bila v večini študij na tem področju spregledana, saj se slednje večinoma osredotočajo zgolj na učinkovitost modelov strojnega učenja.
+Te študije predpostavljajo, da so uporabljeni podatki pravilni, časovno usklajeni in takoj dostopni, kar v realnih scenarijih redko drži.
 
 Cilj te naloge je zagotoviti arhitekturo, ki presega zgoraj navedene omejitve. 
 V disartaciji najprej predstavimo metodologijo čiščenja podatkov, ki izkorišča zmožnost Kalmanovega filtra za izdelavo kratkoročnih napovedi, vključno z napovedovanjem variance. 
-Ta metoda se lahko uporablja za čiščenje podatkovnih tokov z vzorčenjem, ki je veliko višje od hitrosti spremembe merjenih pojavov, kar je običajno pri internetu stvari (IoT). 
+Ta metoda se lahko uporablja za čiščenje podatkovnih, katerih vzorčenje je veliko višje od hitrosti sprememb merjenih pojavov, kar je običajno pri internetu stvari (IoT). 
 Drugič, predstavimo metodologijo za sprotno (online) združevanje množice heterogenih virov pretočnih podatkov v vektorje značilk. 
 Predlagana metodologija ima zmore preseči izzive, ki nastanejo zaradi heterogenih podatkovnih tokov, vključno s časovnim odstopanjem posameznih meritev in različno hitrosto vzorčenja meritev. 
 Poleg tega sistem omogoča tudi vključevanje napovedi in predhodno izračunanih vrednosti v vektor značilk. 
-Sistem je tak sposoben generiranja vektorjev značilk, ki vključujejo časovno usklajene podatke iz različnih virov, agregirane in obogatene vrednosti, odložene vrednosti, statične vrednosti, in vrednosti relevantnih napovedi, kot so npr. vremenske napovedi. 
+S pomočjo opisane metodologije je sistem sposoben generiranja vektorjev značilk, ki vključujejo časovno usklajene podatke iz različnih virov, agregirane in obogatene vrednosti, odložene vrednosti, statične vrednosti, in vrednosti relevantnih napovedi, kot so npr. vremenske napovedi. 
 Takšen sistem je sposoben ustvarjanja zelo obsežnih vektorjev značilk, ki omogočajo učinkovito modeliranje.
 Velika količina značilk pa ne vodi nujno do najbolj optimalnih modelnih rezultatov, zato v nadaljevanju disertacije predstavimo še algoritem za izbiro značilk FASTENER, ki uporablja genetske algoritme in večkriterijsko optimizacijo. 
 Algoritem je bil posebej zasnovan za nalogo segmentacije satelitskih slik za potrebe v kmetijstvum, vendar pa je pokazal nepričakovano učinkovitost v različnih drugih situacijah, kot je npr. napovedovanje časovnih vrst. 
 Vse predstavljene rešitve na koncu postavimo v lambda arhitekturo v okviru masovnih podatkov (Big Data).
 Lambda arhitekturi tako dodamo analitične zmožnosti, ki presegajo samo zaznavanje dogodkov.
 Predlagano arhitekturo smo uporabili za rešitev na področju upravljanja voda. 
-Na istem področju preizkusimo tudi uporabnost algoritmov za inkrementalno učenje in jih primerjamo z tradicionalnimi paketnimi metodami.
+Na istem področju preizkusimo tudi uporabnost algoritmov za inkrementalno učenje, kot so npr. Hoeffdingova drevesa, in jih primerjamo z tradicionalnimi paketnimi metodami.
 
 Učinkovitost predlaganega pristopa smo ocenili v več scenarijih, ki obsegajo področja, kot so upravljanje energije, prometa in okolja. 
 Najnovejša implementacija celotne rešitve je bila izvedena v okviru evropskega projekta H2020 NAIADES, kar uspešno dokazuje njeno uporabnost na področju upravljanja voda.
