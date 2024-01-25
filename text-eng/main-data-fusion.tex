@@ -47,18 +47,18 @@ Validation of the methodology's efficiency has been accomplished through cloud d
 
 The findings strongly support the advantages of employing data fusion techniques. Enhanced data streams have demonstrated a higher model accuracy when compared to nonenriched streams. Moreover, the use of multiple data streams that provide contextual information has yielded superior model outcomes compared to relying solely on single-source data streams.
 
-In the train scenario, when predicting electricity consumption for a prediction horizon of $10$ seconds on the edge device, the model accuracy increased from $R^2=0.62$ (when only using additional auto-regressive features) to $R^2=0.8$ using random forest regression with the top 20 correlated features.
-In the smart grid scenario, the most successful predictive algorithm was also a random forest.
+In the train scenario, when predicting electricity consumption for a prediction horizon of $10$ seconds on the edge device on a train, the model accuracy increased from $R^2=0.62$ (when only using additional auto-regressive features) to $R^2=0.8$ using random forest regression with the top 20 correlated features.
+In the smart grid scenario, the most successful predictive algorithm was also the random forest.
 The prediction horizon was set to $10$ hours.
 Performance improved from $R^2 = 0.90$ for models using only auto-regressive features to $R^2 = 0.93$ with the top 20 features.
-In the traffic data set, we predicted the energy demand for an electric train power station 10 hours in advance.
-The random forest performance improved from $R^2 = 0.68$ to $R^2 = 0.80$.
+In the traffic data set, we predicted the energy demand for an electric train power station $10$ hours in advance.
+Random forest performance improved from $R^2 = 0.68$ to $R^2 = 0.80$.
 
 The implemented system has been successfully deployed across two distinct environments: a cloud-based infrastructure and an edge computing device.
-In a cloud-based deployment, the methodology's efficiency has been validated on the smart-grid dataset. 
-On the edge devices, deployed in electric public trains, the effectiveness of the methodology has been validated on the traffic data set.
+In a cloud-based deployment, the methodology's efficiency has been validated on the smart grid dataset. 
+On edge devices, deployed in public electric trains, the effectiveness of the methodology has been validated on the traffic data set.
 
-The results confirm the benefits of using data fusion methods: enriched data streams yield better model accuracy than nonenriched, and streams from multiple data streams that describe more context yield better model results than single source data streams.
-Additional validation of the overall system water management scenarios is also given in Chapter \ref{ch:big_data_framework}.
+The results confirm the benefits of using data fusion methods: enriched data streams yield better model accuracy than nonenriched ones, and streams from multiple data streams that describe more context yield better model results than single-source data streams.
+Additional validation of the overall system in water management scenario is also given in Chapter \ref{ch:big_data_framework}.
 
 \includepdf[pages=-]{papers/streaming_data_fusion_for_iot.pdf}

@@ -31,10 +31,10 @@ It was originally developed to be used in land-use classification based on earth
 FASTENER exploits entropy-based measures, such as mutual information in the crossover phase of the iterative genetic approach. 
 FASTENER outperforms other multi-objective wrapper methods in terms of converging to a (near) optimal subset of features more quickly.
 
-We evaluate the performance of wrapper methods with an area under (Pareto) front ($AUF$), where the front is represented with $F_1$ scores of an optimal $k$ selected features for a particular classification problem.
-FASTENER outperforms the POSS~\cite{qian:2015:poss} and FS-SDS~\cite{alhakbani:2017:fs-sds} algorithms in Earth observation data sets with an average $AUF$ of $0.71$, compared to $0.66$ and $0.62$ for POSS and FS-SDS, respectively.
-FASTENER also produces surprisingly good results in the benchmark datasets for feature selection~\cite{li:2017:feature}, where its average $AUF$ score is better than the FS-SDS $AUF$ score in almost all, except one out of 25 datasets.
-On average difference between $AUF$ scores betweeen FS-SDS and FASTENER in $0.08$, where FASTENER needed more than $2.5$-times less model evaluations.
+We evaluate the performance of wrapper methods with an area under (Pareto) front ($\textit{AUF}$), where the front is represented with $F_1$ scores of an optimal $k$ selected features for a particular classification problem.
+FASTENER outperforms the POSS~\cite{qian:2015:poss} and FS-SDS~\cite{alhakbani:2017:fs-sds} algorithms in Earth observation data sets with an average $\textit{AUF}$ of $0.71$, compared to $0.66$ and $0.62$ for POSS and FS-SDS, respectively.
+FASTENER also produces surprisingly good results in the benchmark datasets for feature selection~\cite{li:2017:feature}, where its average $\textit{AUF}$ score is better than the FS-SDS $\textit{AUF}$ score in almost all, except one out of 25 datasets.
+On average difference between $\textit{AUF}$ scores betweeen FS-SDS and FASTENER in $0.08$, where FASTENER needed more than $2.5$-times less model evaluations.
 Compared to DT-forward algorithm~\cite{guyon:2003:dt-forward}, FASTENER yields better results in nine out of 25 benchmark datasets.
 It is worth mentioning that FASTENER requires on average $2$ to $5$ times fewer model evaluations than DT-forward, while achieving comparable or better results.
 
